@@ -23,8 +23,7 @@ MEDIA_ROOT = ""
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '5xv)4@f&a+)gl5s#s86ark^_6%^s8v810#izv1l=uz7%a@y&v5'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
