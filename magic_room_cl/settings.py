@@ -18,6 +18,8 @@ DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 GS_BUCKET_NAME = 'learning-room-285708.appspot.com'
 MEDIA_URL =  'https://storage.cloud.google.com/learning-room-285708.appspot.com/'
 MEDIA_ROOT = ""
+#MEDIA_URL = "/media/"
+#MEDIA_ROOT = BASE_DIR+os.path.sep+"media"
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 

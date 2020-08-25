@@ -27,7 +27,114 @@ class LessonSerializer(serializers.HyperlinkedModelSerializer):
                   ,'step8_description','step8_image','questions')
 
 
+    def validate_user(self,value):
+        print(str(dir(value)))
+        print(str(value.id))
+        lesson_list = lesson.objects.filter(user=value.id)
 
+        print(str(len(lesson_list)))
+
+        if len(lesson_list) > 20:
+            raise serializers.ValidationError('The maximum number of lessons for the user is reached')
+        else:
+            return value
+
+    def validate_title_image(self,value):
+        if value is not None:
+            print("Image"+str(type(value))+str(value.size))
+            if value.size > 500000:
+                raise serializers.ValidationError('Size of title image is greater than 500 KB')
+            else:
+                return value
+    def validate_title_video(self,value):
+        if value is not None:
+            print("Image"+str(type(value))+str(value.size))
+            if value.size > 500000:
+                raise serializers.ValidationError('Size of title video is greater than 500 KB')
+            else:
+                return value
+    def validate_term1_image(self,value):
+        if value is not None:
+            print("Image"+str(type(value))+str(value.size))
+            if value.size > 500000:
+                raise serializers.ValidationError('Size of term 1 image is greater than 500 KB')
+            else:
+                return value
+    def validate_term2_image(self,value):
+        if value is not None:
+            print("Image"+str(type(value))+str(value.size))
+            if value.size > 500000:
+                raise serializers.ValidationError('Size of term 2 image is greater than 500 KB')
+            else:
+                return value
+    def validate_term3_image(self,value):
+        if value is not None:
+            print("Image"+str(type(value))+str(value.size))
+            if value.size > 500000:
+                raise serializers.ValidationError('Size of term 3 image is greater than 500 KB')
+            else:
+                return value
+
+    def validate_step1_image(self,value):
+        if value is not None:
+            print("Image"+str(type(value))+str(value.size))
+            if value.size > 500000:
+                raise serializers.ValidationError('Size of step 1 image is greater than 500 KB')
+            else:
+                return value
+    def validate_step2_image(self,value):
+        if value is not None:
+            print("Image"+str(type(value))+str(value.size))
+            if value.size > 500000:
+                raise serializers.ValidationError('Size of step 2 image is greater than 500 KB')
+            else:
+                return value
+    def validate_step3_image(self,value):
+        if value is not None:
+            print("Image"+str(type(value))+str(value.size))
+            if value.size > 500000:
+                raise serializers.ValidationError('Size of step 3 image is greater than 500 KB')
+            else:
+                return value
+
+    def validate_step4_image(self,value):
+        if value is not None:
+            print("Image"+str(type(value))+str(value.size))
+            if value.size > 500000:
+                raise serializers.ValidationError('Size of step 4 image is greater than 500 KB')
+            else:
+                return value
+
+    def validate_step5_image(self,value):
+        if value is not None:
+            print("Image"+str(type(value))+str(value.size))
+            if value.size > 500000:
+                raise serializers.ValidationError('Size of step 5 image is greater than 500 KB')
+            else:
+                return value
+    def validate_step6_image(self,value):
+        if value is not None:
+            print("Image"+str(type(value))+str(value.size))
+            if value.size > 500000:
+                raise serializers.ValidationError('Size of step 6 image is greater than 500 KB')
+            else:
+                return value
+
+    def validate_step7_image(self,value):
+        if value is not None:
+            print("Image"+str(type(value))+str(value.size))
+            if value.size > 500000:
+                raise serializers.ValidationError('Size of step 7 image is greater than 500 KB')
+            else:
+                return value
+
+    def validate_step8_image(self,value):
+        if value is not None:
+            print("Image"+str(type(value))+str(value.size))
+            if value.size > 500000:
+                raise serializers.ValidationError('Size of step 8 image is greater than 500 KB')
+            else:
+                return value
     def create(self, validated_data):
         lesson_id = validated_data.pop('lesson_id')
         class_id = validated_data.pop('class_id')
