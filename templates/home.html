@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST">
+  {% csrf_token %}
+        <p class="button text-center">
+         <button class="btn btn-secondary px-4 py-3"> <a href="https://rzp.io/l/pRPgc9M" target ="_blank" style="color:white">Get Lesson Pack</a></button>
+  </p>
+  <div class="media block-6 d-block text-center">
+  <div class="media-body p-2 mt-3">
+  <h3 class="heading">Welcome, {{ user.username }}!</h3>
+
+    <p> You have  {% for lc in lessoncounts %}<strong>{{ lc.number_of_lessons_available }}</strong>  out of <strong>{{ lc.total_number_of_lessons }}</strong>{% endfor %} lessons which you can share with your students ! Go ahead !</p>
+  <p> To share more lessons with your classrooms click on the lesson pack , you can top up 50 lessons at a time
+  at the cost of just Re 1 per lesson. It cannot get more affordable than this !</p>
+  </div>
+  </div>
+</form>
+{% endblock %}

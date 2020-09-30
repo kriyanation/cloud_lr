@@ -95,17 +95,6 @@ WSGI_APPLICATION = 'magic_room_cl.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-       'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            #'HOST':  '127.0.0.1', #/cloudsql/learning-room-285708:asia-south1:learningroom',
-            'HOST':  '/cloudsql/learning-room-285708:asia-south1:learningroom', #/cloudsql/learning-room-285708:asia-south1:learningroom',
-            'USER': 'lradmin',
-            'PASSWORD': 'dharma3',
-            'NAME': 'lesson_data',
-            'PORT':'3306'
-        }
-}
 
 
 
